@@ -47,9 +47,9 @@ class MaimaiAPI extends RESTDataSource {
 	}
 
 	public async getCharts() {
-		const res = await this.get('maimai.json')
+		const res = await this.get('maimai.json').then<IMaimai>(o => JSON.parse(o))
 
-		return this.transformer(JSON.parse(res))
+		return this.transformer(res)
 	}
 }
 
