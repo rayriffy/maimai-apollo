@@ -6,12 +6,12 @@ const schema = gql`
   }
 
   type Chart @cacheControl(maxAge: 3600){
-    genre: string
+    genre: String
     name: [LocaleText]
     artist: [LocaleText]
-    image_url: string
-    version: string
-    bpm: number
+    image_url: String
+    version: String
+    bpm: Int
     level: [ChartLevel]
     listen: [ChartListen]
     regionlocked: Boolean
@@ -23,11 +23,11 @@ const schema = gql`
   }
 
   type ChartLevel @cacheControl(maxAge: 3600){
-    easy: number
-    basic: number
-    advanced: number
-    expert: number
-    master: number
+    easy: String
+    basic: String
+    advanced: String
+    expert: String
+    master: String
     remaster: String!
   }
 
