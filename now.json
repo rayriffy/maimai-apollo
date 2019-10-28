@@ -10,7 +10,7 @@
     "dest": "/src/index.ts"
   }],
   "env": {
-    "ENGINE_KEY": "@maimai-apollo-engine-key"
+    "ENGINE_API_KEY": "@maimai-apollo-engine-key"
   },
   "regions": ["all"]
 }

@@ -13,7 +13,7 @@ import typeDefs from './graphql/schema'
 import MaimaiAPI from './graphql/data/maimai'
 
 const server = express()
-const {ENGINE_KEY} = process.env
+const {ENGINE_API_KEY} = process.env
 
 /**
  * Summon Apollo GraphQL
@@ -31,7 +31,7 @@ const apollo = new ApolloServer({
     ),
   },
   engine: {
-    apiKey: ENGINE_KEY,
+    apiKey: ENGINE_API_KEY,
   },
   introspection: true,
   playground: true,
