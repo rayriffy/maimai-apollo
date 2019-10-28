@@ -12,13 +12,13 @@ import typeDefs from './graphql/schema'
 
 import maimaiAPI from './graphql/data/maimai'
 
-const app = express()
+const server = express()
 const {ENGINE_KEY} = process.env
 
 /**
  * Summon Apollo GraphQL
  */
-const server = new ApolloServer({
+const apollo = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => ({
@@ -43,14 +43,14 @@ const server = new ApolloServer({
  * Server initialization
  */
 
-app.use(cors())
+server.use(cors())
 
-server.applyMiddleware({
-  app,
+apollo.applyMiddleware({
+  app: server,
   path: '/',
   cors: false,
 })
 
-app.listen(4000)
+server.listen(4000)
 
-export default app
+export default server
