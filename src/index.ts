@@ -10,7 +10,7 @@ import express from 'express'
 import resolvers from './graphql/resolvers'
 import typeDefs from './graphql/schema'
 
-import maimaiAPI from './graphql/data/maimai'
+import MaimaiAPI from './graphql/data/maimai'
 
 const server = express()
 const {ENGINE_KEY} = process.env
@@ -22,7 +22,7 @@ const apollo = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => ({
-    maimaiAPI: new maimaiAPI(),
+    MaimaiAPI: new MaimaiAPI(),
   }),
   persistedQueries: {
     cache: new MemcachedCache(
