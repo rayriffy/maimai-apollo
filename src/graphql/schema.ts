@@ -6,7 +6,7 @@ const schema = gql`
   }
 
   type Chart @cacheControl(maxAge: 3600){
-    genre: String!
+    genre: ChartGenre!
     name: LocaleText!
     artist: LocaleText!
     image_url: String!
@@ -34,6 +34,15 @@ const schema = gql`
   type ChartListen @cacheControl(maxAge: 3600){
     youtube: String!
     niconico: String
+  }
+
+  enum ChartGenre {
+    pops
+    nico
+    toho
+    sega
+    game
+    orig
   }
 `
 

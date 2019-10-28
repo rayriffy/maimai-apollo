@@ -3,7 +3,7 @@ import _ from 'lodash'
 import { RESTDataSource } from 'apollo-datasource-rest'
 
 interface ISong {
-	genre: string
+	genre: 'pops' | 'nico' | 'toho' | 'sega' | 'game' | 'orig'
 	name: {
 		en: string
 		jp: string
