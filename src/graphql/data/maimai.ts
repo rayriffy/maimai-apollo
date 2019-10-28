@@ -37,7 +37,7 @@ interface IMaimai {
 class MaimaiAPI extends RESTDataSource {
 	constructor() {
 		super()
-		this.baseURL = 'https://raw.githubusercontent.com/rayriffy/maimai-json/master/maimai.json'
+		this.baseURL = 'https://raw.githubusercontent.com/rayriffy/maimai-json/master'
 	}
 
 	private transformer(raw: IMaimai) {
@@ -47,9 +47,9 @@ class MaimaiAPI extends RESTDataSource {
 	}
 
 	public async getCharts() {
-		const res = await this.get<IMaimai>('')
+		const res = await this.get('maimai.json')
 
-		return this.transformer(res)
+		return this.transformer(JSON.parse(res))
 	}
 }
 
