@@ -37,6 +37,7 @@ const apollo = new ApolloServer({
   playground: true,
   tracing: true,
   cacheControl: true,
+  debug: true,
 })
 
 /**
