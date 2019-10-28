@@ -1,0 +1,25 @@
+{
+  "name": "maimai-apollo",
+  "version": "1.0.0",
+  "description": "maimai Song API powered by Apollo GraphQL",
+  "main": "index.js",
+  "repository": "https://github.com/rayriffy/maimai-apollo",
+  "author": "Phumrapee Limpianchop <contact@rayriffy.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^1.18.2",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^0.6.6",
+    "apollo-server-cache-memcached": "^0.6.3",
+    "apollo-server-express": "^2.9.7",
+    "axios": "^0.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

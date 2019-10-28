@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "maimai-apollo",
+  "builds": [{
+    "src": "/src/index.ts",
+    "use": "@now/node"
+  }],
+  "routes": [{
+    "src": "/(.*)",
+    "dest": "/src/index.ts"
+  }],
+  "env": {
+    "ENGINE_KEY": "@maimai-apollo-engine-key"
+  },
+  "regions": ["all"]
+}
