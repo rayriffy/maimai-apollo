@@ -17,7 +17,10 @@ const resolver: IResolvers = {
 
       const res = sortOption.order === 'ASC' ? _.sortBy(filteredRaw, sortOption.fields) : sortOption.order === 'DESC' ?  _.sortBy(filteredRaw, sortOption.fields).reverse() : filteredRaw 
 
-      return res
+      return {
+        count: res.length,
+        edges: res,
+      }
     },
   },
 }
