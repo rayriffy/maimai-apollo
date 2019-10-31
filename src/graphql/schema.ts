@@ -19,7 +19,7 @@ const schema = gql`
 
   input ChartSort {
     order: SortOrder
-    fields: String
+    fields: [String!]
   }
 
   input ChartFilter {

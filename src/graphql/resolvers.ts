@@ -8,7 +8,7 @@ const resolver: IResolvers = {
       const {filter, sort} = args
       const sortOption = {
         order: 'DESC',
-        fields: '',
+        fields: [],
         ...sort,
       }
 
