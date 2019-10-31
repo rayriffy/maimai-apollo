@@ -2,7 +2,7 @@ import { gql } from 'apollo-server-express'
 
 const schema = gql`
   type Query {
-    getCharts: [Chart]
+    getCharts(filter: ChartFilter): [Chart]!
   }
 
   type Chart @cacheControl(maxAge: 3600){
@@ -17,9 +17,26 @@ const schema = gql`
     regionlocked: Boolean!
   }
 
+  input ChartFilter {
+    genre: ChartGenre
+    name: LocaleTextFilter
+    artist: LocaleTextFilter
+    image_url: String
+    version: String
+    bpm: Int
+    level: ChartLevelFilter
+    listen: ChartListenFilter
+    regionlocked: Boolean
+  }
+
   type LocaleText @cacheControl(maxAge: 3600){
     en: String!
     jp: String!
+  }
+
+  input LocaleTextFilter {
+    en: String
+    jp: String
   }
 
   type ChartLevel @cacheControl(maxAge: 3600){
@@ -31,8 +48,22 @@ const schema = gql`
     remaster: String
   }
 
+  input ChartLevelFilter {
+    easy: String
+    basic: String
+    advanced: String
+    expert: String
+    master: String
+    remaster: String
+  }
+
   type ChartListen @cacheControl(maxAge: 3600){
     youtube: String!
+    niconico: String
+  }
+
+  input ChartListenFilter {
+    youtube: String
     niconico: String
   }
 
@@ -43,6 +74,11 @@ const schema = gql`
     sega
     game
     orig
+  }
+
+  enum SortOrder {
+    ASC
+    DESC
   }
 `
 
