@@ -2,7 +2,7 @@ import { gql } from 'apollo-server-express'
 
 const schema = gql`
   type Query {
-    getCharts(filter: ChartFilter): [Chart]!
+    getCharts(sort: ChartSort, filter: ChartFilter): [Chart]!
   }
 
   type Chart @cacheControl(maxAge: 3600){
@@ -15,6 +15,11 @@ const schema = gql`
     level: ChartLevel!
     listen: ChartListen!
     regionlocked: Boolean!
+  }
+
+  input ChartSort {
+    order: SortOrder
+    fields: String
   }
 
   input ChartFilter {
